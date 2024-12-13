@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <!-- Nokia -->
+    <category name="Nokia">
+        <category_image_url>https://example.com/images/nokia_category.jpg</category_image_url>
+        <product>
+            <name>Nokia 110</name>
+            <description>Điện thoại phổ thông, màn hình màu 1.8 inch, pin 800mAh.</description>
+            <price>650000</price>
+            <image_url>https://example.com/images/nokia_110.jpg</image_url>
+        </product>
+        <product>
+            <name>Nokia 3310</name>
+            <description>Điện thoại cổ điển, màn hình 2.4 inch, pin 1200mAh.</description>
+            <price>1200000</price>
+            <image_url>https://example.com/images/nokia_3310.jpg</image_url>
+        </product>
+    </category>
+
+    <!-- Canon -->
+    <category name="Canon">
+        <category_image_url>https://example.com/images/canon_category.jpg</category_image_url>
+        <product>
+            <name>Canon EOS 90D</name>
+            <description>Máy ảnh DSLR với cảm biến APS-C 32.5 MP, quay video 4K.</description>
+            <price>25000000</price>
+            <image_url>https://example.com/images/canon_eos_90d.jpg</image_url>
+        </product>
+        <product>
+            <name>Canon EOS Rebel T7</name>
+            <description>Máy ảnh DSLR dành cho người mới bắt đầu, cảm biến 24.1 MP.</description>
+            <price>15000000</price>
+            <image_url>https://example.com/images/canon_rebel_t7.jpg</image_url>
+        </product>
+    </category>
+
+    <!-- Samsung -->
+    <category name="Samsung">
+        <category_image_url>https://example.com/images/samsung_category.jpg</category_image_url>
+        <product>
+            <name>Samsung Galaxy S23</name>
+            <description>Smartphone cao cấp với màn hình Dynamic AMOLED 6.1 inch, camera 50 MP.</description>
+            <price>22000000</price>
+            <image_url>https://example.com/images/samsung_galaxy_s23.jpg</image_url>
+        </product>
+        <product>
+            <name>Samsung Galaxy A14</name>
+            <description>Smartphone tầm trung với màn hình PLS LCD 6.6 inch, camera 50 MP.</description>
+            <price>6000000</price>
+            <image_url>https://example.com/images/samsung_galaxy_a14.jpg</image_url>
+        </product>
+    </category>
+
+    <!-- Apple -->
+    <category name="Apple">
+        <category_image_url>https://example.com/images/apple_category.jpg</category_image_url>
+        <product>
+            <name>iPhone 15</name>
+            <description>Smartphone cao cấp với chip A16 Bionic, màn hình Super Retina XDR 6.1 inch.</description>
+            <price>29000000</price>
+            <image_url>https://example.com/images/iphone_15.jpg</image_url>
+        </product>
+        <product>
+            <name>iPhone 13</name>
+            <description>Smartphone với chip A15 Bionic, màn hình OLED 6.1 inch.</description>
+            <price>22000000</price>
+            <image_url>https://example.com/images/iphone_13.jpg</image_url>
+        </product>
+    </category>
+</products>
