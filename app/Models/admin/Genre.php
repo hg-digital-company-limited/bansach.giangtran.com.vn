@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Genre extends Model
 {
-    protected $table = "Genre";
+    protected $table = "genre";
     protected $primaryKey = "GenreID";
     static $rules = [
         'GenreName' => 'required',

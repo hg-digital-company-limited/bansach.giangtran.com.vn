@@ -31,7 +31,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class User extends Model
 {
-    protected $table = "User";
+    protected $table = "user";
     protected $primaryKey = "UserID";
     const UPDATED_AT = "ModifiedDate";
     const CREATED_AT = "CreatedDate";

@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SalesOrderDetail extends Model
 {
-    protected $table = "SalesOrderDetail";
+    protected $table = "salesorderdetail";
     protected $primaryKey = ["OrderID", "BookID"];
     public $incrementing = false;
     static $rules = [

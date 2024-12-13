@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SalesOrder extends Model
 {
-    protected $table = "SalesOrder";
+    protected $table = "salesorder";
     protected $primaryKey = "OrderID";
     static $rules = [
         'OrderID' => 'required',

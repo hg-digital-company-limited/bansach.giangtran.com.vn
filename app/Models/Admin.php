@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model implements Authenticatable
 {
-    protected $table = "Admin";
+    protected $table = "admin";
     protected $primaryKey = "AdminID";
     public $timestamps = false;
     public $incrementing = false;

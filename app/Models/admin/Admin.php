@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Hash;
  */
 class Admin extends Model
 {
-    protected $table = "Admin";
+    protected $table = "admin";
     protected $primaryKey = "AdminID";
 
     public $timestamps = false;

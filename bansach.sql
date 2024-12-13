@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 13, 2024 lúc 03:25 AM
+-- Thời gian đã tạo: Th12 13, 2024 lúc 07:27 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -679,7 +679,9 @@ INSERT INTO `shoppingcart` (`CartID`, `UserID`) VALUES
 (170, NULL),
 (171, NULL),
 (172, NULL),
-(173, NULL);
+(173, NULL),
+(174, NULL),
+(175, NULL);
 
 -- --------------------------------------------------------
 
@@ -720,7 +722,7 @@ INSERT INTO `shoppingcartdetail` (`CartItemID`, `CartID`, `BookID`, `Quantity`) 
 (43, NULL, 37, 1),
 (44, 110, 37, 4),
 (46, 113, 38, 1),
-(49, NULL, 33, 1),
+(49, NULL, 33, 2),
 (50, 127, 33, 2),
 (56, 145, 33, 8);
 
@@ -1000,7 +1002,7 @@ ALTER TABLE `shippingaddress`
 -- AUTO_INCREMENT cho bảng `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
 
 --
 -- AUTO_INCREMENT cho bảng `shoppingcartdetail`

@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Bookset extends Model
 {
-    protected $table = "BookSet";
+    protected $table = "bookset";
     protected $primaryKey = "SetID";
 
     static $rules = [

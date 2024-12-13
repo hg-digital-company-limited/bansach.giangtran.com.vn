@@ -8,7 +8,7 @@ class ShoppingCart extends Model
 {
     use HasFactory;
 
-    protected $table = "ShoppingCart"; // Tên bảng
+    protected $table = "shoppingcart"; // Tên bảng
 
     protected $primaryKey = 'CartID'; // Khóa chính
 

@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Supplier extends Model
 {
-    protected $table = "Supplier";
+    protected $table = "supplier";
     protected $primaryKey = "SupplierID";
 
     static $rules = [

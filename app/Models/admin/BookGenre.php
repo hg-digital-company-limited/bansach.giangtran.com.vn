@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class BookGenre extends Model
 {
-    protected $table = "BookGenre";
+    protected $table = "bookgenre";
     protected $primaryKey = ["BookID", "GenreID"];
     public $incrementing = false;
 

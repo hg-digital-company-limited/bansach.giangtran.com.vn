@@ -9,7 +9,7 @@ class ShoppingCartDetail extends Model
 {
     use HasFactory;
 
-    protected $table = "ShoppingCartDetail";
+    protected $table = "shoppingcartdetail";
 
     protected $primaryKey = "CartItemID";
 

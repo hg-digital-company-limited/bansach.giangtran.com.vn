@@ -9,7 +9,7 @@ class SalesOrderDetail extends Model
 {
     use HasFactory;
 
-    protected $table = "SalesOrderDetail";
+    protected $table = "salesorderdetail";
 
     public $timestamps = false;
 
