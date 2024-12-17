@@ -20,7 +20,7 @@ class User extends Model implements Authenticatable
     protected $fillable = [
         'UserName',
         'Password', // Đảm bảo mật khẩu được mã hóa trước khi lưu
-        'email',
+        'Email',
         'FirstName',
         'LastName',
         'Gender',
@@ -42,10 +42,10 @@ class User extends Model implements Authenticatable
     }
 
     // Phương thức để mã hóa mật khẩu trước khi lưu
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = bcrypt($password); // Sử dụng bcrypt để mã hóa mật khẩu
-    }
+    // public function setPasswordAttribute($password)
+    // {
+    //     $this->attributes['password'] = bcrypt($password); // Sử dụng bcrypt để mã hóa mật khẩu
+    // }
 
     // Phương thức để xác thực người dùng
     public function validatePassword($password)

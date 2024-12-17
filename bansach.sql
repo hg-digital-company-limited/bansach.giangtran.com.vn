@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 17, 2024 lúc 12:42 PM
+-- Thời gian đã tạo: Th12 17, 2024 lúc 12:57 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -700,7 +700,23 @@ INSERT INTO `shoppingcart` (`CartID`, `UserID`) VALUES
 (191, NULL),
 (192, 46),
 (193, NULL),
-(194, NULL);
+(194, NULL),
+(195, NULL),
+(196, 47),
+(197, NULL),
+(198, NULL),
+(199, 48),
+(200, NULL),
+(201, 49),
+(202, NULL),
+(203, 50),
+(204, NULL),
+(205, 51),
+(206, NULL),
+(207, 52),
+(208, NULL),
+(209, NULL),
+(210, NULL);
 
 -- --------------------------------------------------------
 
@@ -801,9 +817,7 @@ INSERT INTO `user` (`UserID`, `UserName`, `Password`, `Email`, `FirstName`, `Las
 (36, 'hieudeptraI', '$2y$10$Hm2pzRVeXwuuZO8IChwrTODq1NVK3Fg/3Vf92InycZ3ylwYkQLX5K', 'hieu@gmail.com', 'Anh', 'Khoa', NULL, NULL, NULL, NULL, NULL, '0'),
 (37, 'trung@gmail.com', '$2y$10$eiaBfte/Hz5TqZZvC9J.Iuhbaj0znaTWYFAFqv7AeayHFsPsq0G9G', 'trung@gmail.com', 'Huỳnh', 'Trung', NULL, NULL, NULL, NULL, NULL, '0'),
 (38, 'trung', '$2y$10$FgSvMUpnXwDoG.F4uW7pzej2QcBJFhqzkMTCWVzgupe6VXdZp6pQ6', 'hvt9727@gmail.com', 'giang', 'giang', NULL, NULL, NULL, NULL, NULL, '0'),
-(39, 'hvt9727@gmail.com', '$2y$10$wz5/P3ulMFQ97qGyAzQiz.S/T3V8aag60C2zmKrpgaVnJLkDzOFTe', 'hvt972723123@gmail.com', 'huỳnh', 'trung', NULL, NULL, NULL, NULL, NULL, '0'),
-(45, '2509roblox@gmail.com', '$2y$10$63LUvx/6mxeHIfqHYUR.U.08IvPkxvx662WEwL5l1pJ0.ADUJoG8y', '2509roblox@gmail.com', '2509roblox@gmail.com', '2509roblox@gmail.com', NULL, NULL, NULL, NULL, '2024-12-17 18:34:31', '71NVDH'),
-(46, '2509roblox@gmail.comx', '$2y$10$s74mUkqw3tkAk9nJsAZwouJcOf9.mWG5Q9CwHk/vn3vSNmBrm7mF.', '2509roblox@gmail.comx', '2509roblox@gmail.comx', '2509roblox@gmail.comx', NULL, NULL, NULL, NULL, NULL, NULL);
+(52, '2509roblox@gmail.com', '$2y$10$ar9DfZ6zAvE3kz.i81rk6u15LnHVnmrpEHlDJGoQrLVeYuBGk6s1e', '2509roblox@gmail.com', '2509roblox@gmail.com', '2509roblox@gmail.com', NULL, NULL, NULL, NULL, '2024-12-17 18:57:00', 'mEvgjG');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -1027,7 +1041,7 @@ ALTER TABLE `shippingaddress`
 -- AUTO_INCREMENT cho bảng `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
+  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
 
 --
 -- AUTO_INCREMENT cho bảng `shoppingcartdetail`
@@ -1045,7 +1059,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

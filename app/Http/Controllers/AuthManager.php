@@ -55,10 +55,9 @@ class AuthManager extends Controller
             'firstName' => 'required',
             'lastName' => 'required',
         ]);
-
         $data['UserName'] = $request->userName;
-        $data['Password'] = Hash::make($request->password);
-        $data['email'] = $request->email;
+        $data['Password'] = bcrypt($request->password);
+        $data['Email'] = $request->email;
         $data['FirstName'] = $request->firstName;
         $data['LastName'] = $request->lastName;
 
@@ -127,7 +126,7 @@ class AuthManager extends Controller
 
         if ($user->ConfirmCode == $request->confirmCode) {
             if ($request->password == $request->cfpassword) {
-                $user->Password = Hash::make($request->password);
+                $user->Password = bcrypt($request->password);
                 $user->save();
                 return redirect(route('index'));
             }
