@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Website bán sách nhé các bạn</title>
+    <title>Website bán sách</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Demo powered by Templatetrip">

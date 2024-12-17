@@ -115,8 +115,8 @@
                                             </div>
 
                                             <div class="price">
-                                                <div class="regular-price">{{ $product->SellingPrice }}</div>
-                                                <div class="old-price">{{ $product->CostPrice }}</div>
+                                                <div class="regular-price">{{ number_format($product->SellingPrice, 0, ',', '.') }}₫</div>
+                                                <div class="old-price">{{ number_format($product->CostPrice, 0, ',', '.') }}₫</div>
                                             </div>
                                             <div class="button-wrapper">
                                                 <div class="button-group text-center">
@@ -181,8 +181,8 @@
                                             {{ $product->Description }} </div>
 
                                         <div class="price">
-                                            <div class="regular-price">{{ $product->SellingPrice }}</div>
-                                            <div class="old-price">{{ $product->CostPrice }}</div>
+                                            <div class="regular-price">{{ number_format($product->SellingPrice, 0, ',', '.') }}₫</div>
+                                            <div class="old-price">{{ number_format($product->CostPrice, 0, ',', '.') }}₫</div>
                                         </div>
                                         <div class="color-option d-flex align-items-center float-left w-100">
                                             <ul class="color-categories">
@@ -272,8 +272,8 @@
                                         <div
                                             class="price-main col-md-3 col-sm-5 float-left text-center text-sm-center text-xs-left">
                                             <div class="price">
-                                                <div class="regular-price">{{ $product->SellingPrice }}</div>
-                                                <div class="old-price">{{ $product->CostPrice }}</div>
+                                                <div class="regular-price">{{ number_format($product->SellingPrice, 0, ',', '.') }}₫</div>
+                                                <div class="old-price">{{ number_format($product->CostPrice, 0, ',', '.') }}₫</div>
                                             </div>
                                         </div>
                                         <div

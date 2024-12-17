@@ -904,37 +904,37 @@
             `;
     }
 
-    function getAllProductWith(conditional, page) {
-        console.log(conditional);
-        fetch(`/api/product/all/${conditional}?page=${page}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                let paginate = data.products;
-                Paginate.lastPage = paginate.last_page;
-                var products = paginate.data;
-                var productsHTML = products.map(product => renderProduct(product)).join('');
+    // function getAllProductWith(conditional, page) {
+    //     console.log(conditional);
+    //     fetch(`/api/product/all/${conditional}?page=${page}`, {
+    //         method: 'GET',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //     })
+    //         .then(response => {
+    //             if (!response.ok) {
+    //                 throw new Error('Network response was not ok');
+    //             }
+    //             return response.json();
+    //         })
+    //         .then(data => {
+    //             let paginate = data.products;
+    //             Paginate.lastPage = paginate.last_page;
+    //             var products = paginate.data;
+    //             var productsHTML = products.map(product => renderProduct(product)).join('');
 
-                document.querySelector(".displayProducts").innerHTML = productsHTML;
+    //             document.querySelector(".displayProducts").innerHTML = productsHTML;
 
-                events.setOnClickBtnQuickView();
-                setBtnAddToCartOnClick();
+    //             events.setOnClickBtnQuickView();
+    //             setBtnAddToCartOnClick();
 
-                document.querySelector("#pagination-left-text").innerHTML = `Hiển thị ${paginate.from} đến ${paginate.to} trong tổng số ${paginate.total} bản ghi (Trang ${paginate.current_page})`;
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-    }
+    //             document.querySelector("#pagination-left-text").innerHTML = `Hiển thị ${paginate.from} đến ${paginate.to} trong tổng số ${paginate.total} bản ghi (Trang ${paginate.current_page})`;
+    //         })
+    //         .catch(error => {
+    //             console.error('There has been a problem with your fetch operation:', error);
+    //         });
+    // }
 
     function setBtnAddToCartOnClick() {
         // Duyệt qua mỗi phần tử có class là '.btn-cart'

@@ -199,8 +199,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="price">
-                                                                <div class="regular-price">{{ $book->SellingPrice }}</div>
-                                                                <div class="old-price">{{ $book->CostPrice }}</div>
+                                                                <div class="regular-price">{{ number_format($book->SellingPrice, 0, ',', '.') }}₫</div>
+                                                                <div class="old-price">{{ number_format($book->CostPrice, 0, ',', '.') }}₫</div>
                                                             </div>
                                                             <div class="button-wrapper">
                                                                 <div class="button-group text-center">
