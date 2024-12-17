@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 17, 2024 lúc 12:57 PM
+-- Thời gian đã tạo: Th12 17, 2024 lúc 01:13 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -61,7 +61,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`AdminID`, `UserName`, `Password`, `FullName`, `Role`, `Email`) VALUES
-(1, 'admin', '$2y$10$kjUlncM5p1LTovmxQNcsh.yqHPq4xBy.LLn1.QRkQ6ftuJkOdQ3Hq', 'admin', 'admin', 'admin@gmail.com');
+(1, 'admin', '$2y$10$kyCqm0HecxGqQGkJSIEFxuH2yqlGwW/5NYklcn59uuFdWIOR5Z7ES', 'admin', 'admin', 'admin@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -716,7 +716,8 @@ INSERT INTO `shoppingcart` (`CartID`, `UserID`) VALUES
 (207, 52),
 (208, NULL),
 (209, NULL),
-(210, NULL);
+(210, NULL),
+(211, NULL);
 
 -- --------------------------------------------------------
 
@@ -1041,7 +1042,7 @@ ALTER TABLE `shippingaddress`
 -- AUTO_INCREMENT cho bảng `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
+  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
 
 --
 -- AUTO_INCREMENT cho bảng `shoppingcartdetail`
