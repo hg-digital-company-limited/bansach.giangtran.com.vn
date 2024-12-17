@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 13, 2024 lúc 07:27 AM
+-- Thời gian đã tạo: Th12 17, 2024 lúc 12:42 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -681,7 +681,26 @@ INSERT INTO `shoppingcart` (`CartID`, `UserID`) VALUES
 (172, NULL),
 (173, NULL),
 (174, NULL),
-(175, NULL);
+(175, NULL),
+(176, NULL),
+(177, NULL),
+(178, 40),
+(179, NULL),
+(180, NULL),
+(181, 41),
+(182, NULL),
+(183, 42),
+(184, NULL),
+(185, 43),
+(186, NULL),
+(187, 44),
+(188, NULL),
+(189, 45),
+(190, NULL),
+(191, NULL),
+(192, 46),
+(193, NULL),
+(194, NULL);
 
 -- --------------------------------------------------------
 
@@ -724,7 +743,10 @@ INSERT INTO `shoppingcartdetail` (`CartItemID`, `CartID`, `BookID`, `Quantity`) 
 (46, 113, 38, 1),
 (49, NULL, 33, 2),
 (50, 127, 33, 2),
-(56, 145, 33, 8);
+(56, 145, 33, 8),
+(63, NULL, 38, 1),
+(64, 180, 29, 1),
+(65, 180, 38, 1);
 
 -- --------------------------------------------------------
 
@@ -766,19 +788,22 @@ CREATE TABLE `user` (
   `BirthDate` date DEFAULT NULL,
   `PhoneNumber` varchar(20) DEFAULT NULL,
   `CreatedDate` datetime DEFAULT NULL,
-  `ModifiedDate` datetime DEFAULT NULL
+  `ModifiedDate` datetime DEFAULT NULL,
+  `ConfirmCode` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`UserID`, `UserName`, `Password`, `Email`, `FirstName`, `LastName`, `Gender`, `BirthDate`, `PhoneNumber`, `CreatedDate`, `ModifiedDate`) VALUES
-(35, 'hvt92727', '$2y$10$jgEgj86hBVVmJyndc8RI8OzmpQVkUbpfHOnLnfrVCbXOciSRlYsVq', 'hv123t92727@gmail.com', 'Huỳnh', 'Khoa', NULL, NULL, NULL, NULL, NULL),
-(36, 'hieudeptraI', '$2y$10$Hm2pzRVeXwuuZO8IChwrTODq1NVK3Fg/3Vf92InycZ3ylwYkQLX5K', 'hieu@gmail.com', 'Anh', 'Khoa', NULL, NULL, NULL, NULL, NULL),
-(37, 'trung@gmail.com', '$2y$10$eiaBfte/Hz5TqZZvC9J.Iuhbaj0znaTWYFAFqv7AeayHFsPsq0G9G', 'trung@gmail.com', 'Huỳnh', 'Trung', NULL, NULL, NULL, NULL, NULL),
-(38, 'trung', '$2y$10$FgSvMUpnXwDoG.F4uW7pzej2QcBJFhqzkMTCWVzgupe6VXdZp6pQ6', 'hvt9727@gmail.com', 'giang', 'giang', NULL, NULL, NULL, NULL, NULL),
-(39, 'hvt9727@gmail.com', '$2y$10$wz5/P3ulMFQ97qGyAzQiz.S/T3V8aag60C2zmKrpgaVnJLkDzOFTe', 'hvt972723123@gmail.com', 'huỳnh', 'trung', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user` (`UserID`, `UserName`, `Password`, `Email`, `FirstName`, `LastName`, `Gender`, `BirthDate`, `PhoneNumber`, `CreatedDate`, `ModifiedDate`, `ConfirmCode`) VALUES
+(35, 'hvt92727', '$2y$10$jgEgj86hBVVmJyndc8RI8OzmpQVkUbpfHOnLnfrVCbXOciSRlYsVq', 'hv123t92727@gmail.com', 'Huỳnh', 'Khoa', NULL, NULL, NULL, NULL, NULL, '0'),
+(36, 'hieudeptraI', '$2y$10$Hm2pzRVeXwuuZO8IChwrTODq1NVK3Fg/3Vf92InycZ3ylwYkQLX5K', 'hieu@gmail.com', 'Anh', 'Khoa', NULL, NULL, NULL, NULL, NULL, '0'),
+(37, 'trung@gmail.com', '$2y$10$eiaBfte/Hz5TqZZvC9J.Iuhbaj0znaTWYFAFqv7AeayHFsPsq0G9G', 'trung@gmail.com', 'Huỳnh', 'Trung', NULL, NULL, NULL, NULL, NULL, '0'),
+(38, 'trung', '$2y$10$FgSvMUpnXwDoG.F4uW7pzej2QcBJFhqzkMTCWVzgupe6VXdZp6pQ6', 'hvt9727@gmail.com', 'giang', 'giang', NULL, NULL, NULL, NULL, NULL, '0'),
+(39, 'hvt9727@gmail.com', '$2y$10$wz5/P3ulMFQ97qGyAzQiz.S/T3V8aag60C2zmKrpgaVnJLkDzOFTe', 'hvt972723123@gmail.com', 'huỳnh', 'trung', NULL, NULL, NULL, NULL, NULL, '0'),
+(45, '2509roblox@gmail.com', '$2y$10$63LUvx/6mxeHIfqHYUR.U.08IvPkxvx662WEwL5l1pJ0.ADUJoG8y', '2509roblox@gmail.com', '2509roblox@gmail.com', '2509roblox@gmail.com', NULL, NULL, NULL, NULL, '2024-12-17 18:34:31', '71NVDH'),
+(46, '2509roblox@gmail.comx', '$2y$10$s74mUkqw3tkAk9nJsAZwouJcOf9.mWG5Q9CwHk/vn3vSNmBrm7mF.', '2509roblox@gmail.comx', '2509roblox@gmail.comx', '2509roblox@gmail.comx', NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -1002,13 +1027,13 @@ ALTER TABLE `shippingaddress`
 -- AUTO_INCREMENT cho bảng `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
+  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
 
 --
 -- AUTO_INCREMENT cho bảng `shoppingcartdetail`
 --
 ALTER TABLE `shoppingcartdetail`
-  MODIFY `CartItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `CartItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT cho bảng `supplier`
@@ -1020,7 +1045,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

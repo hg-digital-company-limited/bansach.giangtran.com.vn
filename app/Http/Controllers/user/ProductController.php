@@ -25,10 +25,10 @@ class ProductController extends Controller
         $book->increment('ViewCount');
 
         // Lấy đánh giá sách
-        $reviews = DB::table('Review')
-            ->join('User', 'User.UserID', '=', 'Review.UserID')
+        $reviews = DB::table('review')
+            ->join('user', 'user.UserID', '=', 'review.UserID')
             ->where('BookID', $id)
-            ->select('Review.*', 'User.FirstName', 'User.LastName')
+            ->select('review.*', 'user.FirstName', 'user.LastName')
             ->get();
 
         $totalRv = $reviews->count();
@@ -42,22 +42,22 @@ class ProductController extends Controller
             ->get();
 
         // Lấy thể loại của sách
-        $listGenre = DB::table('BookGenre')
-            ->join('Genre', 'BookGenre.GenreID', '=', 'Genre.GenreID')
-            ->where('BookGenre.BookID', $id)
-            ->select('Genre.*')
+        $listGenre = DB::table('bookgenre')
+            ->join('genre', 'bookgenre.GenreID', '=', 'genre.GenreID')
+            ->where('bookgenre.BookID', $id)
+            ->select('genre.*')
             ->get();
 
         // Tính điểm đánh giá trung bình
-        $avgRating = DB::table('Review')->where('BookID', $id)->avg('Rating') ?? 0;
+        $avgRating = DB::table('review')->where('BookID', $id)->avg('Rating') ?? 0;
         $rounderIntRating = intval(round($avgRating));
 
         // Kiểm tra xem người dùng đã mua sách chưa
-        $isPurchased = DB::table('SalesOrderDetail')
-            ->join('SalesOrder', 'SalesOrderDetail.OrderID', '=', 'SalesOrder.OrderID')
-            ->where('SalesOrder.UserID', Auth::id())
-            ->where('SalesOrderDetail.BookID', $id)
-            ->where('SalesOrder.OrderStatus', 'COMPLETED')
+        $isPurchased = DB::table('salesorderdetail')
+            ->join('salesorder', 'salesorderdetail.OrderID', '=', 'salesorder.OrderID')
+            ->where('salesorder.UserID', Auth::id())
+            ->where('salesorderdetail.BookID', $id)
+            ->where('salesorder.OrderStatus', 'COMPLETED')
             ->exists();
 
         // Lấy sách khác cùng thể loại
@@ -84,8 +84,8 @@ class ProductController extends Controller
                 $query->orderBy("ViewCount", "desc");
                 break;
             case 'best-selling':
-                $query->join('getListBookSoldDesc', 'getListBookSoldDesc.BookID', '=', 'book.BookID') // Sửa đổi tên bảng
-                ->orderBy('getListBookSoldDesc.TotalSold', "desc");
+                $query->join('getListbooksolddesc', 'getListbooksolddesc.BookID', '=', 'book.BookID') // Sửa đổi tên bảng
+                ->orderBy('getListbooksolddesc.TotalSold', "desc");
                 break;
         }
 
@@ -96,7 +96,7 @@ class ProductController extends Controller
     // Lấy sản phẩm theo ID
     public function getProductByID($productID)
     {
-        $product = Book::with('avgRatingBook')->find($productID);
+        $product = Book::with('avgratingbook')->find($productID);
         return response()->json(["product" => $product]);
     }
 
@@ -115,9 +115,9 @@ class ProductController extends Controller
     public function searchProduct(Request $request)
     {
         $textSearch = $request->input('keyWord');
-      
+
         $products = DB::table("book") // Đổi tên bảng ở đây
-        ->leftJoin('avgRatingBook', 'book.BookID', '=', 'avgRatingBook.BookID')
+        ->leftJoin('avgratingbook', 'book.BookID', '=', 'avgratingbook.BookID')
         ->join('publisher', "book.PublisherID", "=", "publisher.PublisherID") // Đảm bảo dùng đúng tên bảng
             ->where('BookTitle', 'like', '%' . $textSearch . '%')
             ->orWhere('Author', 'like', '%' . $textSearch . '%')
@@ -161,7 +161,7 @@ class ProductController extends Controller
             }
         }
 
-        $query = Book::query()->join('avgRatingBook', 'book.BookID', '=', 'avgRatingBook.BookID'); // Đổi tên bảng ở đây
+        $query = Book::query()->join('avgratingbook', 'book.BookID', '=', 'avgratingbook.BookID'); // Đổi tên bảng ở đây
 
         foreach ($conditions as $condition) {
             $query->where($condition[0], $condition[1], $condition[2]);
@@ -194,7 +194,7 @@ class ProductController extends Controller
         $review->Content = $request->review;
         $review->Rating = $request->Rating;
         $review->save();
-       
+
         $user = User::find($request->userID);
         return response()->json([
             'message' => 'Review created successfully!',
@@ -214,7 +214,7 @@ public function deleteReview($reviewID, Request $request)
     try {
         // Tìm kiếm review theo reviewID
         $review = Review::findOrFail($reviewID);
-        
+
         // Kiểm tra quyền của người dùng (optional)
         if ($review->UserID != $request->userID) {
             return response()->json(['message' => 'Unauthorized'], 403);

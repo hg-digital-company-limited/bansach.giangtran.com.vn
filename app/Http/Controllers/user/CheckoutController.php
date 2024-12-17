@@ -61,12 +61,12 @@ class CheckoutController extends Controller
             $discount = $totalPrice - $bookPrice;
             $discount = round($discount, 2);
 
-            
+
             return view(
                 "user.checkout-page", compact('totalPrice', 'bookPrice', 'discount', 'couponCode')
             );
         }
-       
+
         $newbookPrice  = $bookPrice;
         return view(
             "user.checkout-page", compact('totalPrice', 'newbookPrice', 'shippingAddressList', 'couponCode')
@@ -108,7 +108,7 @@ class CheckoutController extends Controller
 
         if ($totalPrice > 0) {
             $address = ShippingAddress::where(['UserID' => $userID])
-                ->where(['Address' => $request->query('shippingAddress')])
+                ->where(['Address' => $request->query('shippingaddress')])
                 ->first();
             $saleOrders['UserID'] = $userID;
             $saleOrders['OrderStatus'] = 'PENDING';
@@ -135,7 +135,7 @@ class CheckoutController extends Controller
                 'totalPrice' => $totalPrice,
                 'orderID' => $Order->OrderID,
             ];
-           
+
             Mail::to(Session::get('user')->Email)->send(new OrderMail($mailData));
 
             ShoppingCartDetail::where('CartID', $cartID)->delete();

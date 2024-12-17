@@ -15,20 +15,20 @@ class HomeController extends Controller
         $avgRatings = DB::table('ratings')
             ->select('BookID', DB::raw('IFNULL(AVG(RatingValue), 0) as AVGRating'))
             ->groupBy('BookID');
-    
+
         // Lấy 10 sách ngẫu nhiên từ bảng book và kết hợp với AVG ratings
         $randomBooks = DB::table('book')
-            ->leftJoinSub($avgRatings, 'avgRatings', function ($join) {
-                $join->on('book.BookID', '=', 'avgRatings.BookID');
+            ->leftJoinSub($avgRatings, 'avgratings', function ($join) {
+                $join->on('book.BookID', '=', 'avgratings.BookID');
             })
-            ->select('book.*', 'avgRatings.AVGRating')
+            ->select('book.*', 'avgratings.AVGRating')
             ->take(10)
             ->inRandomOrder()
             ->get();
-    
+
         return view("user.index", compact('randomBooks'));
     }
-    
 
-    
+
+
 }

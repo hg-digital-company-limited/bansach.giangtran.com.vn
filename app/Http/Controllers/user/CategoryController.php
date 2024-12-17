@@ -12,7 +12,7 @@ class CategoryController extends Controller
 {
     // public function ProductCategory(){
     //     $products = DB::table('Book')
-    //         ->join('avgRatingBook', 'Book.BookID', '=', 'avgRatingBook.BookID')->paginate(9);
+    //         ->join('avgratingbook', 'Book.BookID', '=', 'avgratingbook.BookID')->paginate(9);
     //     return view("user.product-category", compact('products'));
     // }
     public function ListCategory(string $id){
