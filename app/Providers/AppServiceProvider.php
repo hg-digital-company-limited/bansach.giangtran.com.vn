@@ -84,11 +84,10 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('user.product-category', function ($view) {
             $authors = DB::table('book')
-                ->select('author')
+                ->select('Author')
                 ->distinct()
                 ->take(5)
                 ->get();
-
             $view->with('authors', $authors);
         });
 

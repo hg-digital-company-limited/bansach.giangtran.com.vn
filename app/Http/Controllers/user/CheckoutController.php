@@ -108,7 +108,7 @@ class CheckoutController extends Controller
 
         if ($totalPrice > 0) {
             $address = ShippingAddress::where(['UserID' => $userID])
-                ->where(['Address' => $request->query('shippingaddress')])
+                ->where(['Address' => $request->query('shippingAddress')])
                 ->first();
             $saleOrders['UserID'] = $userID;
             $saleOrders['OrderStatus'] = 'PENDING';

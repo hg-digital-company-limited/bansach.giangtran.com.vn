@@ -1,7 +1,7 @@
 @extends('user.layout.layout')
 
 @section('content')
-  
+
     <nav aria-label="breadcrumb" class="w-100 float-left">
         <ol class="breadcrumb parallax justify-content-center" data-source-url="/user/assets/img/banner/parallax.jpg"
             style="background-image: url(&quot;/user/assets/img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
@@ -22,8 +22,8 @@
                             <div>
                                 <h6 class="my-0">Giá sản phẩm</h6>
                             </div>
-                          
-                        
+
+
                             <span class="text-muted">{{ $newbookPrice > 0 ? $newbookPrice . ' đ' : 'Chưa có giá sản phẩm' }}</span>
                         </div>
                         <div class="list-group-item d-flex justify-content-between lh-condensed">
@@ -112,7 +112,7 @@
                                     required="">
                                 @if($shippingAddressList)
                                     @foreach($shippingAddressList as $shippingAddres)
-                                        <option name="shippingAddress" value="{{$shippingAddres->Address}}">{{$shippingAddres->Address}}</option>
+                                        <option name="shippingAddress" id="shippingAddress" selected value="{{$shippingAddres->Address}}">{{$shippingAddres->Address}}</option>
                                     @endforeach
                                 @endif
                             </select>

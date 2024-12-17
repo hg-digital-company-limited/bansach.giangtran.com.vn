@@ -144,13 +144,13 @@ class ProductController extends Controller
             if (strpos($name, 'group-1') !== false) {
                 // Xử lý checkbox thuộc group giá cả
                 if ($id === 'price-1') {
-                    $conditions[] = ['SellingPrice', '<=', 25];
+                    $conditions[] = ['SellingPrice', '<=', 150000];
                 } elseif ($id === 'price-2') {
-                    $conditions[] = ['SellingPrice', '>', 25, 'SellingPrice', '<=', 50];
+                    $conditions[] = ['SellingPrice', '>', 150000, 'SellingPrice', '<=', 500000];
                 } elseif ($id === 'price-3') {
-                    $conditions[] = ['SellingPrice', '>', 50, 'SellingPrice', '<=', 75];
+                    $conditions[] = ['SellingPrice', '>', 500000, 'SellingPrice', '<=', 1000000];
                 } elseif ($id === 'price-4') {
-                    $conditions[] = ['SellingPrice', '>', 75];
+                    $conditions[] = ['SellingPrice', '>', 1000000];
                 }
             } elseif (strpos($name, 'group-2') !== false) {
                 // Xử lý checkbox thuộc group tác giả

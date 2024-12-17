@@ -48,25 +48,25 @@
                         document.addEventListener('DOMContentLoaded', function () {
                             const priceFilters = document.querySelectorAll('.form-check-input'); // Các checkbox lọc giá
                             const products = document.querySelectorAll('.product-layouts'); // Các sản phẩm
-                    
+
                             priceFilters.forEach(filter => {
                                 filter.addEventListener('change', function () {
                                     // Lấy danh sách các khoảng giá đã chọn
                                     const selectedRanges = Array.from(priceFilters)
                                         .filter(input => input.checked)
                                         .map(input => input.id);
-                    
+
                                     // Lọc sản phẩm
                                     products.forEach(product => {
                                         const price = parseFloat(product.dataset.price); // Lấy giá của sản phẩm
                                         let isVisible = false;
-                    
+
                                         // Kiểm tra sản phẩm thuộc khoảng giá nào
                                         if (selectedRanges.includes('price-1') && price <= 25) isVisible = true;
                                         if (selectedRanges.includes('price-2') && price > 25 && price <= 50) isVisible = true;
                                         if (selectedRanges.includes('price-3') && price > 50 && price <= 75) isVisible = true;
                                         if (selectedRanges.includes('price-4') && price > 75) isVisible = true;
-                    
+
                                         // Hiển thị hoặc ẩn sản phẩm
                                         product.style.display = isVisible ? 'block' : 'none';
                                     });
@@ -74,7 +74,7 @@
                             });
                         });
                     </script>
-                    
+
                     @if(!empty($textSearch))
                         <h5 data-textsearch="{{$textSearch}}">Kết quả tìm kiếm cho: "{{ $textSearch }}"</h5>
                     @endif
@@ -369,7 +369,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                             <div class="sidebar-block size">
 
@@ -380,9 +380,10 @@
                                 <div id="author" class="sidebar-widget-option-wrapper collapse show">
                                     <div class="size-inner">
                                         @foreach($authors as $author)
+
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="group-2" id="author-{{ $author->id ?? $loop->index }}">
-                                                <label class="form-check-label" for="author-{{ $author->id ?? $loop->index }}">{{ $author->name ?? 'Tên tác giả' }}</label>
+                                                <input class="form-check-input" type="checkbox" name="group-2" id="author-{{ $author->Author }}">
+                                                <label class="form-check-label" for="author-{{ $author->id ?? $loop->index }}">{{ $author->Author ?? 'Tên tác giả' }}</label>
                                             </div>
                                         @endforeach
                                     </div>
@@ -418,241 +419,7 @@
                         </div>
                     </div>
 
-                    <div class="sidebar-left-banner left-sidebar w-100 float-left">
-                        <div class="ttleftbanner">
-                            <a href="#">
-                                <img src="/user/assets/img/banner/left-banner.jpg" alt="left-banner" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sidebar-product left-sidebar w-100 float-left">
-                        <div class="title">
-                            <a data-toggle="collapse" href="#sidebar-product" aria-expanded="false"
-                                aria-controls="sidebar-product" class="d-lg-none block-toggler">sale products</a>
-                        </div>
-                        <div id="sidebar-product" class="collapse w-100 float-left">
-                            <div class="sidebar-block sale ">
-                                <h3 class="widget-title text-capitalize">sale products</h3>
-                                <div class="products owl-carousel">
-                                    <div class="sale-col">
-                                        <div class="product-layouts">
-                                            <div class="product-thumb">
-                                                <div class="image col-sm-4 float-left">
-                                                    <a href="#">
-                                                        <img src="/user/assets/img/products/01.jpg" alt="01" />
-                                                    </a>
-                                                </div>
-                                                <div class="thumb-description col-sm-8 text-left float-left">
-                                                    <div class="caption">
-                                                        <h4 class="product-title text-capitalize"><a
-                                                                href="product-details.html">aliquam quaerat voluptatem</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div class="rating">
-                                                        <div class="product-ratings d-inline-block align-middle">
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="regular-price">$100.00</div>
-                                                        <div class="old-price">$150.00</div>
-                                                    </div>
-                                                    <div class="button-wrapper">
-                                                        <div class="button-group text-center">
-                                                            <button type="button" class="btn btn-primary btn-cart"
-                                                                data-target="#cart-pop" data-toggle="modal"><i
-                                                                    class="material-icons">shopping_cart</i><span>Add to
-                                                                    cart</span></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-layouts">
-                                            <div class="product-thumb">
-                                                <div class="image col-sm-4 float-left">
-                                                    <a href="#">
-                                                        <img src="/user/assets/img/products/02.jpg" alt="01" />
-                                                    </a>
-                                                </div>
-                                                <div class="thumb-description col-sm-8 text-left float-left">
-                                                    <div class="caption">
-                                                        <h4 class="product-title text-capitalize"><a
-                                                                href="product-details.html">aspetur autodit autfugit</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div class="rating">
-                                                        <div class="product-ratings d-inline-block align-middle">
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="regular-price">$100.00</div>
-                                                        <div class="old-price">$150.00</div>
-                                                    </div>
-                                                    <div class="button-wrapper">
-                                                        <div class="button-group text-center">
-                                                            <button type="button" class="btn btn-primary btn-cart"
-                                                                data-target="#cart-pop" data-toggle="modal"><i
-                                                                    class="material-icons">shopping_cart</i><span>Add to
-                                                                    cart</span></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-layouts">
-                                            <div class="product-thumb">
-                                                <div class="image col-sm-4 float-left">
-                                                    <a href="#">
-                                                        <img src="/user/assets/img/products/03.jpg" alt="03" />
-                                                    </a>
-                                                </div>
-                                                <div class="thumb-description col-sm-8 text-left float-left">
-                                                    <div class="caption">
-                                                        <h4 class="product-title text-capitalize"><a
-                                                                href="product-details.html">magni dolores eosquies</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div class="rating">
-                                                        <div class="product-ratings d-inline-block align-middle">
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="regular-price">$100.00</div>
-                                                        <div class="old-price">$150.00</div>
-                                                    </div>
-                                                    <div class="button-wrapper">
-                                                        <div class="button-group text-center">
-                                                            <button type="button" class="btn btn-primary btn-cart"
-                                                                data-target="#cart-pop" data-toggle="modal"><i
-                                                                    class="material-icons">shopping_cart</i><span>Add to
-                                                                    cart</span></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="sale-col">
 
-                                        <div class="product-layouts">
-                                            <div class="product-thumb">
-                                                <div class="image col-sm-4 float-left">
-                                                    <a href="#">
-                                                        <img src="/user/assets/img/products/04.jpg" alt="04" />
-                                                    </a>
-                                                </div>
-                                                <div class="thumb-description col-sm-8 text-left float-left">
-                                                    <div class="caption">
-                                                        <h4 class="product-title text-capitalize"><a
-                                                                href="product-details.html">voluptas nulla pariatur</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div class="rating">
-                                                        <div class="product-ratings d-inline-block align-middle">
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="regular-price">$100.00</div>
-                                                        <div class="old-price">$150.00</div>
-                                                    </div>
-                                                    <div class="button-wrapper">
-                                                        <div class="button-group text-center">
-                                                            <button type="button" class="btn btn-primary btn-cart"
-                                                                data-target="#cart-pop" data-toggle="modal"><i
-                                                                    class="material-icons">shopping_cart</i><span>Add to
-                                                                    cart</span></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-layouts">
-                                            <div class="product-thumb">
-                                                <div class="image col-sm-4 float-left">
-                                                    <a href="#">
-                                                        <img src="/user/assets/img/products/05.jpg" alt="05" />
-                                                    </a>
-                                                </div>
-                                                <div class="thumb-description col-sm-8 text-left float-left">
-                                                    <div class="caption">
-                                                        <h4 class="product-title text-capitalize"><a
-                                                                href="product-details.html">aliquam quat voluptatem</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div class="rating">
-                                                        <div class="product-ratings d-inline-block align-middle">
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="material-icons off">star</i></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="regular-price">$100.00</div>
-                                                        <div class="old-price">$150.00</div>
-                                                    </div>
-                                                    <div class="button-wrapper">
-                                                        <div class="button-group text-center">
-                                                            <button type="button" class="btn btn-primary btn-cart"
-                                                                data-target="#cart-pop" data-toggle="modal"><i
-                                                                    class="material-icons">shopping_cart</i><span>Add to
-                                                                    cart</span></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

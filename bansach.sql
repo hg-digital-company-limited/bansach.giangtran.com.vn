@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 17, 2024 lúc 01:13 PM
+-- Thời gian đã tạo: Th12 17, 2024 lúc 02:35 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -109,7 +109,7 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`BookID`, `SetID`, `BookTitle`, `Author`, `Description`, `CreatedDate`, `ModifiedDate`, `PublisherID`, `CategoryID`, `GenreID`, `CostPrice`, `SellingPrice`, `PageCount`, `Weight`, `CoverStyle`, `Size`, `YearPublished`, `CreatedBy`, `Avatar`, `ImagePath`, `ViewCount`, `ModifiedBy`) VALUES
-(29, 1, 'Combo Trọn Bộ CONAN ĐẶC SẮC: Conan và Tổ chức Áo Đen (Tập 1, 2) + Conan Tuyển Tập Đặc Biệt - FBI Selection + Conan Tuyển Tập Fan Bình Chọn (Tập 1, 2) + Conan Những Câu Chuyện Lãng Mạn (Tập 1,2,3) - Bộ 8 Cuốn/ Tặng Kèm Postcard Green Life', 'Aoyama Gosho', 'Thám tử lừng danh Conan (名探偵コナン (Danh thám trinh Conan) Meitantei Konan?) là một series manga trinh thám được sáng tác bởi Aoyama Gōshō. Tác phẩm được đăng tải trên tạp chí Weekly Shōnen Sunday của nhà xuất bản Shogakukan vào năm 1994 và được đóng gói thành 106 tập tankōbon tính đến tháng 10 năm 2024. Truyện xoay quanh một cậu thám tử trung học có tên là Kudo Shinichi trong lúc đang điều tra một Tổ chức Áo đen bí ẩn đã bị ép phải uống một loại thuốc độc có thể gây chết người. May mắn là đã sống sót nhưng cơ thể thì lại bị teo nhỏ như một đứa bé 6-7 tuổi. Kể từ đó để tránh bị lộ thân phận thực sự của mình, Shinichi đã lấy tên là Edogawa Conan và chuyển đến sống ở nhà của cô bạn thời thơ ấu Mori Ran cùng với cha của cô ấy là một thám tử tư tên Mori Kogoro với hy vọng một ngày nào đó cậu có thể hạ gục Tổ chức Áo Đen và lấy lại hình dáng ban đầu.', '2024-10-23 05:17:14', '2024-12-12 12:56:59', 1, 2, 1, 120000.00, 120000.00, 45, 0.12, '0', '11.3 x 17.6', '2003', NULL, '/images/book/1732630072-49291.jpg', NULL, NULL, NULL),
+(29, 1, 'Combo Trọn Bộ CONAN ĐẶC SẮC: Conan và Tổ chức Áo Đen (Tập 1, 2) + Conan Tuyển Tập Đặc Biệt - FBI Selection + Conan Tuyển Tập Fan Bình Chọn (Tập 1, 2) + Conan Những Câu Chuyện Lãng Mạn (Tập 1,2,3) - Bộ 8 Cuốn/ Tặng Kèm Postcard Green Life', 'Aoyama Gosho', 'Thám tử lừng danh Conan (名探偵コナン (Danh thám trinh Conan) Meitantei Konan?) là một series manga trinh thám được sáng tác bởi Aoyama Gōshō. Tác phẩm được đăng tải trên tạp chí Weekly Shōnen Sunday của nhà xuất bản Shogakukan vào năm 1994 và được đóng gói thành 106 tập tankōbon tính đến tháng 10 năm 2024. Truyện xoay quanh một cậu thám tử trung học có tên là Kudo Shinichi trong lúc đang điều tra một Tổ chức Áo đen bí ẩn đã bị ép phải uống một loại thuốc độc có thể gây chết người. May mắn là đã sống sót nhưng cơ thể thì lại bị teo nhỏ như một đứa bé 6-7 tuổi. Kể từ đó để tránh bị lộ thân phận thực sự của mình, Shinichi đã lấy tên là Edogawa Conan và chuyển đến sống ở nhà của cô bạn thời thơ ấu Mori Ran cùng với cha của cô ấy là một thám tử tư tên Mori Kogoro với hy vọng một ngày nào đó cậu có thể hạ gục Tổ chức Áo Đen và lấy lại hình dáng ban đầu.', '2024-10-23 05:17:14', '2024-12-17 13:30:53', 1, 2, 1, 1200000.00, 120000.00, 45, 0.12, '0', '11.3 x 17.6', '2003', NULL, '/images/book/1732630072-49291.jpg', NULL, NULL, NULL),
 (30, NULL, 'Kỉ Nguyên Kì Lạ', 'Huỳnh Văn Trung', 'Toàn Cầu Quỷ Dị Thời Đại; Thời Đại Kì Lạ Của Toàn Cầu', '2024-10-30 02:41:54', '2024-12-12 12:58:43', 1, 1, 2, 120000.00, 120000.00, 150, 0.20, '0', '12x12', '2020', NULL, '/images/book/1732630316-50263.jpg', NULL, NULL, NULL),
 (31, NULL, '7 Viên Ngọc Rồng', 'Toriyama Akira', 'Câu chuyện kể về cuộc phiêu lưu của Son Goku từ thời thơ ấu cho đến khi trưởng thành khi cậu luyện tập võ thuật và khám phá thế giới để tìm kiếm 7 quả cầu được gọi là Ngọc Rồng.', '2024-10-30 04:12:35', '2024-12-12 13:06:12', 1, 4, 4, 120000.00, 120000.00, 1000, 0.20, '0', '12x12', '2015', NULL, '/images/book/1730261555-download.jpg', NULL, NULL, '19'),
 (32, NULL, 'Thập Tử Đế Hoàng đều là đệ tử của ta', 'Toriyama Akira', 'Thập Tử Đế Hoàng đều là đệ tử của ta', '2024-10-30 04:16:57', '2024-12-12 13:06:14', 1, 1, 3, 120000.00, 120000.00, 100, 0.20, '0', '12x12', '2020', NULL, '/images/book/1732630417-31339.jpg', NULL, NULL, NULL),
@@ -401,7 +401,8 @@ INSERT INTO `salesorder` (`OrderID`, `UserID`, `OrderDate`, `ShippingStatus`, `S
 (30, 38, '2024-12-11 17:18:58', NULL, NULL, 0.00, NULL, 'PENDING', 16, 1080000.00, 5.00),
 (32, 38, '2024-12-12 20:32:56', NULL, NULL, 0.00, NULL, 'PENDING', 16, 120000.00, 5.00),
 (33, 38, '2024-12-12 20:36:54', NULL, NULL, 0.00, NULL, 'PENDING', 16, 120000.00, 5.00),
-(34, 38, '2024-12-12 20:37:35', NULL, NULL, 0.00, NULL, 'PENDING', 16, 120000.00, 5.00);
+(34, 38, '2024-12-12 20:37:35', NULL, NULL, 0.00, NULL, 'PENDING', 16, 120000.00, 5.00),
+(35, 52, '2024-12-17 20:23:36', NULL, NULL, 0.00, NULL, 'PENDING', 17, 240000.00, 5.00);
 
 -- --------------------------------------------------------
 
@@ -447,7 +448,9 @@ INSERT INTO `salesorderdetail` (`OrderID`, `BookID`, `QuantitySold`, `Price`, `S
 (30, 33, 1, 120000.00, 120000.00),
 (32, 33, 1, 120000.00, 120000.00),
 (33, 33, 1, 120000.00, 120000.00),
-(34, 29, 1, 120000.00, 120000.00);
+(34, 29, 1, 120000.00, 120000.00),
+(35, 29, 1, 120000.00, 120000.00),
+(35, 30, 1, 120000.00, 120000.00);
 
 -- --------------------------------------------------------
 
@@ -489,7 +492,8 @@ INSERT INTO `shippingaddress` (`AddressID`, `UserID`, `FullName`, `City`, `Distr
 (13, 30, NULL, 'hà nội', 'thanh xuan', 'test', '123 test', NULL, 0, '2024-11-13 06:41:36', '2024-11-13 06:41:36'),
 (14, 37, NULL, 'Đà Nẵng', 'thanh xuan', 'thanh xuan', '123 test', NULL, 0, '2024-11-13 11:03:54', '2024-11-13 11:03:54'),
 (15, 35, NULL, '123', '42', '123', '12', NULL, 0, '2024-11-26 16:13:04', '2024-11-26 16:13:04'),
-(16, 38, NULL, 'Đà Nẵng', 'thanh xuan', 'thanh xuan', 'tam thanh', NULL, 0, '2024-11-27 11:47:33', '2024-11-27 11:47:33');
+(16, 38, NULL, 'Đà Nẵng', 'thanh xuan', 'thanh xuan', 'tam thanh', NULL, 0, '2024-11-27 11:47:33', '2024-11-27 11:47:33'),
+(17, 52, NULL, '123', '123', '123', '123123', NULL, 0, '2024-12-17 13:19:10', '2024-12-17 13:19:10');
 
 -- --------------------------------------------------------
 
@@ -717,7 +721,8 @@ INSERT INTO `shoppingcart` (`CartID`, `UserID`) VALUES
 (208, NULL),
 (209, NULL),
 (210, NULL),
-(211, NULL);
+(211, NULL),
+(212, NULL);
 
 -- --------------------------------------------------------
 
@@ -1030,25 +1035,25 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT cho bảng `salesorder`
 --
 ALTER TABLE `salesorder`
-  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT cho bảng `shippingaddress`
 --
 ALTER TABLE `shippingaddress`
-  MODIFY `AddressID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `AddressID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
+  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
 
 --
 -- AUTO_INCREMENT cho bảng `shoppingcartdetail`
 --
 ALTER TABLE `shoppingcartdetail`
-  MODIFY `CartItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `CartItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT cho bảng `supplier`

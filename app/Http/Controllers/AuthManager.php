@@ -40,6 +40,7 @@ class AuthManager extends Controller
 
         // Đăng nhập người dùng
         Auth::login($user);
+        Session::put('user', $user);
 
         return response()->json(['error' => false, 'message' => 'Login successful', 'user' => $user]);
     }
