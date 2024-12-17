@@ -86,7 +86,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/login', [\App\Http\Controllers\AdminAuthController::class, 'login']);
     Route::post('/logout', [\App\Http\Controllers\AdminAuthController::class, 'logout'])->name('admin.logout');
 });
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin-dashboard');
     Route::resource('/admin/user', \App\Http\Controllers\admin\UserController::class);
     Route::resource('/admin/book', \App\Http\Controllers\admin\BookController::class);

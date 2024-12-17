@@ -18,7 +18,10 @@ class Admin extends Model implements Authenticatable
     {
         return 'Email';
     }
-
+    public function isAdmin()
+    {
+        return $this->role === 'admin'; // Giả sử bạn có thuộc tính 'role'
+    }
     public function getAuthIdentifier()
     {
         return $this->getAttribute($this->getAuthIdentifierName());

@@ -30,7 +30,7 @@ class AdminAuthController extends Controller
 
         if (Hash::check($credentials['password'], $admin->Password)) {
             // Đăng nhập admin
-            // Auth::guard('admin')->login($admin, $remember);
+            Auth::guard('admin')->login($admin, $remember);
 
             // Redirect đến trang admin
             return redirect()->intended('/admin');
