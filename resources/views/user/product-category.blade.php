@@ -383,7 +383,7 @@
 
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="group-2" id="author-{{ $author->Author }}">
-                                                <label class="form-check-label" for="author-{{ $author->id ?? $loop->index }}">{{ $author->Author ?? 'Tên tác giả' }}</label>
+                                                <label class="form-check-label" for="author-{{ $author->Author }}">{{ $author->Author ?? 'Tên tác giả' }}</label>
                                             </div>
                                         @endforeach
                                     </div>
