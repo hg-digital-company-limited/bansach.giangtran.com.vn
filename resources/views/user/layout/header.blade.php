@@ -93,7 +93,7 @@
                                                             <a href="#">{{ $item->book?->BookTitle }}</a>
                                                             <div class="quantity float-left w-100">
                                                                 <span class="cart-qty">{{ $item->Quantity }} × </span>
-                                                                <span class="text-left price">{{ $item->book?->CostPrice }} đ</span>
+                                                                <span class="text-left price">{{ number_format($item->book?->CostPrice, 0, ',', '.') }} đ</span>
                                                             </div>
                                                         </td>
                                                         <td class="text-center close">
@@ -111,7 +111,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="text-left"><strong>Tổng chi phí</strong></td>
-                                                    <td class="text-right"><strong class="ttprice">{{ $totalPrice }} đ</strong></td>
+                                                    <td class="text-right"><strong class="ttprice">{{ number_format($totalPrice, 0, ',', '.') }} đ</strong></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -159,7 +159,7 @@
         var currentRow = $(this).closest('tr');
 
         $.ajax({
-            url: '/cart/remove', 
+            url: '/cart/remove',
             method: 'POST',
             data: { book_id: bookID },
             success: function (response) {
@@ -175,7 +175,7 @@
 
     // Thêm sản phẩm vào giỏ hàng
     $(".add-to-cart").click(function () {
-        var bookID = $(this).data('bookid'); 
+        var bookID = $(this).data('bookid');
         var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
         $.ajaxSetup({

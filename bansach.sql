@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 17, 2024 lúc 02:35 PM
+-- Thời gian đã tạo: Th12 19, 2024 lúc 03:35 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -117,7 +117,7 @@ INSERT INTO `book` (`BookID`, `SetID`, `BookTitle`, `Author`, `Description`, `Cr
 (35, 2, 'Thỏ Bảy Màu', 'Huỳnh Thái Ngọc', 'Thỏ Bảy Màu là một loạt truyện tranh ngắn do họa sĩ Huỳnh Thái Ngọc sáng tác từ năm 2014. Loạt truyện ban đầu thuộc dạng ngắn và được đăng tải chủ yếu trên Facebook & YouTube. Đến năm 2015, tập truyện đầu tiên của Thỏ bảy màu đã được ra mắt với tên Thỏ bảy màu - Timeline của tôi có gì? do nhà xuất bản Thế giới phát hành. Tập truyện thứ hai đã được ra mắt sau đó 7 năm có tên Thỏ bảy màu và những người nghĩ nó là bạn do nhà xuất bản Dân trí phát hành. \"Nghe lời thỏ, coi như bỏ\" được xem là khẩu hiệu xuyên suốt của bộ truyện. Bản quyền nhân vật hiện trực thuộc của Công ty TNHH T7M tại Thành phố Hồ Chí Minh.', '2024-10-30 10:52:54', '2024-12-12 13:06:15', 1, 3, 3, 120000.00, 120000.00, 200, 0.20, '0', '12x12', '2023', NULL, '/images/book/1732621159-50176.jpg', NULL, NULL, NULL),
 (36, 2, 'Truyện tranh Doraemon truyện ngắn', 'Fujiko F. Fujio', 'Doraemon là series truyện tranh kể về chú mèo máy Doraemon đến từ thế kỷ 22 để giúp một cậu bé học sinh tiểu học hậu đậu tên là Nobita. Các mẩu truyện Doraemon thường ngắn gọn, dễ hiểu, dí dỏm và mang cái nhìn đầy lạc quan về cuộc sống tương lai cũng như sự phát triển của khoa học – kỹ thuật.', '2024-10-30 10:56:28', '2024-12-12 13:06:19', 1, 1, 2, 120000.00, 120000.00, 200, 0.20, '0', '12x12', '2015', NULL, '/images/book/1732629737-50026.jpg', NULL, NULL, NULL),
 (37, 3, 'Sách Tiếng Việt Lớp 1', 'Nguyễn Minh Thuyết', 'Sách Tiếng Việt Lớp 1', '2024-10-30 11:15:05', '2024-12-12 13:06:18', 5, 2, 2, 120000.00, 120000.00, 100, 0.15, '0', '12x12', '2015', NULL, '/images/book/1732630479-45152.jpg', NULL, NULL, NULL),
-(38, 3, 'Sách Giáo Khoa Toán lớp 1', 'Huỳnh Thái Ngọc', 'Sách Giáo Khoa Toán lớp 1', '2024-10-30 11:17:25', '2024-12-12 13:06:17', 5, 3, 4, 120000.00, 120000.00, 200, 0.16, '0', '12x12', '2015', NULL, '/images/book/1732630521-44474.jpg', NULL, NULL, NULL);
+(38, 3, 'Sách Giáo Khoa Toán lớp 1', 'Huỳnh Thái Ngọc', 'Sách Giáo Khoa Toán lớp 1', '2024-10-30 11:17:25', '2024-12-19 02:28:19', 5, 3, 4, 120000.00, 120000.00, 200, 0.16, '0', '12x12', '2015', NULL, '/images/book/default.png', NULL, NULL, '52');
 
 -- --------------------------------------------------------
 
@@ -242,7 +242,7 @@ INSERT INTO `genre` (`GenreID`, `GenreName`, `CategoryID`, `CreatedBy`, `Created
 (1, 'Trinh Thám 2', 1, 'admin', '2024-10-30 06:06:17', '2024-10-30 06:06:45', 'admin'),
 (2, 'khoa học viễn tưởng', 2, 'admin', '2024-10-30 06:06:17', '2024-10-30 06:06:45', 'admin'),
 (3, 'truyện hài hước\r\n', 3, 'admin', '2024-10-30 06:06:17', '2024-10-30 06:06:45', 'admin'),
-(4, 'Tội phạm', 4, 'admin', '2024-10-30 06:06:17', '2024-10-30 06:06:45', 'admin');
+(4, 'Tội phạm', 4, 'admin', '2024-10-30 06:06:17', '2024-12-19 02:31:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -722,7 +722,10 @@ INSERT INTO `shoppingcart` (`CartID`, `UserID`) VALUES
 (209, NULL),
 (210, NULL),
 (211, NULL),
-(212, NULL);
+(212, NULL),
+(213, NULL),
+(214, NULL),
+(215, NULL);
 
 -- --------------------------------------------------------
 
@@ -768,7 +771,9 @@ INSERT INTO `shoppingcartdetail` (`CartItemID`, `CartID`, `BookID`, `Quantity`) 
 (56, 145, 33, 8),
 (63, NULL, 38, 1),
 (64, 180, 29, 1),
-(65, 180, 38, 1);
+(65, 180, 38, 1),
+(68, NULL, 35, 1),
+(69, 207, 38, 1);
 
 -- --------------------------------------------------------
 
@@ -1047,13 +1052,13 @@ ALTER TABLE `shippingaddress`
 -- AUTO_INCREMENT cho bảng `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
+  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
 
 --
 -- AUTO_INCREMENT cho bảng `shoppingcartdetail`
 --
 ALTER TABLE `shoppingcartdetail`
-  MODIFY `CartItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `CartItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT cho bảng `supplier`

@@ -113,7 +113,7 @@ class BookController extends Controller
         $book = Book::findOrFail($id);
         $genres = Genre::all();
         $publishers = Publisher::all();
-        $bookSets = BookSet::all();
+        $bookSets = Bookset::all();
         $selectedGenres = $book->genres->pluck('GenreID')->toArray();
         $images = $book->bookimages;
 

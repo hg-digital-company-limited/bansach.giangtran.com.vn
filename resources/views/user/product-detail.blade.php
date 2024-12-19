@@ -80,8 +80,8 @@
                                     @endphp
                                     <a href="#" class="review-down">(đánh giá)</a>
                                     <div class="price float-left w-100 d-flex">
-                                        <div class="regular-price">{{ $book->SellingPrice }}</div>
-                                        <div class="old-price">{{ $book->CostPrice }}</div>
+                                        <div class="regular-price">{{ number_format($book->SellingPrice, 0, ',', '.') }} VNĐ</div>
+                                        <div class="old-price">{{ number_format($book->CostPrice, 0, ',', '.') }} VNĐ</div>
                                     </div>
                                     <div class="product-variants float-left w-100">
                                         <div class="col-md-3 col-sm-6 col-xs-12 size-options d-flex align-items-center">
@@ -388,7 +388,7 @@
     <script>
         $('document').ready(function () {
     events.setOnClickBtnQuickView();
-    
+
     <?php
     $ok = $isLogin & $isPurchased;
     ?>
@@ -464,7 +464,7 @@ function addReview() {
                 'Content-Type': 'application/json',
             }
         })
-        
+
             .then(response => response.json())
             .then(data => {
                 const newReviewHTML = newReviewHTMLCode(data);
