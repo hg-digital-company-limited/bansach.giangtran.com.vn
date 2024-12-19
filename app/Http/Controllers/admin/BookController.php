@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\admin\Book;
 use App\Models\admin\BookGenre;
-use App\Models\admin\BookSet;
+use App\Models\admin\Bookset;
 use App\Models\admin\Genre;
 use App\Models\admin\Publisher;
 use Illuminate\Http\Request;
@@ -47,7 +47,7 @@ class BookController extends Controller
         $book = new Book();
         $genres = Genre::all(); // Lấy tất cả thể loại
         $publishers = Publisher::all(); // Lấy tất cả nhà xuất bản
-        $bookSets = BookSet::all(); // Lấy tất cả bộ sách
+        $bookSets = Bookset::all(); // Lấy tất cả bộ sách
         $selectedGenres = []; // Thể loại đã chọn
         $images = []; // Danh sách hình ảnh
 

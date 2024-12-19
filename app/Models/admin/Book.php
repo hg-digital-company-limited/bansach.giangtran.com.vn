@@ -77,7 +77,7 @@ class Book extends Model
     // Mối quan hệ với thể loại
     public function genres()
     {
-        return $this->belongsToMany(Genre::class, 'BookGenre', 'BookID', 'GenreID');
+        return $this->belongsToMany(Genre::class, 'bookgenre', 'BookID', 'GenreID');
     }
 
     // Mối quan hệ với hình ảnh sách
