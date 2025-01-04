@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 19, 2024 lúc 03:48 AM
+-- Thời gian đã tạo: Th1 04, 2025 lúc 04:00 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -186,7 +186,7 @@ INSERT INTO `bookset` (`SetID`, `SetTitle`, `SetAvatar`, `Description`, `Created
 CREATE TABLE `category` (
   `CategoryID` int(11) NOT NULL,
   `CategoryName` varchar(100) NOT NULL,
-  `CreatedBy` varchar(255) NOT NULL,
+  `CreatedBy` varchar(255) DEFAULT NULL,
   `CreatedDate` timestamp NULL DEFAULT current_timestamp(),
   `ModifiedDate` timestamp NULL DEFAULT current_timestamp(),
   `ModifiedBy` varchar(50) DEFAULT NULL
@@ -200,7 +200,8 @@ INSERT INTO `category` (`CategoryID`, `CategoryName`, `CreatedBy`, `CreatedDate`
 (1, 'Tiểu Thuyết', 'admin', '2024-10-21 12:31:03', NULL, NULL),
 (2, 'Khoa Học', 'admin', '2024-10-21 12:31:03', NULL, NULL),
 (3, 'Truyện Tranh 1', 'admin', '2024-10-30 06:04:42', '2024-10-30 06:05:34', 'admin'),
-(4, 'Trinh Thám', 'admin', '2024-10-30 10:49:28', '2024-10-30 10:49:28', NULL);
+(4, 'Trinh Thám', 'admin', '2024-10-30 10:49:28', '2024-10-30 10:49:28', NULL),
+(5, 'test', NULL, '2025-01-04 02:54:11', '2025-01-04 02:54:11', NULL);
 
 -- --------------------------------------------------------
 
@@ -215,8 +216,17 @@ CREATE TABLE `coupon` (
   `CreatedBy` varchar(100) DEFAULT NULL,
   `CreatedDate` datetime DEFAULT NULL,
   `ModifiedBy` varchar(100) DEFAULT NULL,
-  `ModifiedDate` datetime DEFAULT NULL
+  `ModifiedDate` datetime DEFAULT NULL,
+  `ExpiryDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `coupon`
+--
+
+INSERT INTO `coupon` (`CouponID`, `CouponCode`, `DiscountAmount`, `CreatedBy`, `CreatedDate`, `ModifiedBy`, `ModifiedDate`, `ExpiryDate`) VALUES
+(1, 'test', 0.34, NULL, '2025-01-04 09:59:11', NULL, '2025-01-04 09:59:11', '2025-01-04'),
+(2, 'ss', 0.34, NULL, '2025-01-04 09:59:50', NULL, '2025-01-04 09:59:50', '2025-01-04');
 
 -- --------------------------------------------------------
 
@@ -228,7 +238,7 @@ CREATE TABLE `genre` (
   `GenreID` int(11) NOT NULL,
   `GenreName` varchar(100) DEFAULT NULL,
   `CategoryID` int(11) DEFAULT NULL,
-  `CreatedBy` varchar(255) NOT NULL,
+  `CreatedBy` varchar(255) DEFAULT NULL,
   `CreatedDate` timestamp NULL DEFAULT current_timestamp(),
   `ModifiedDate` timestamp NOT NULL DEFAULT current_timestamp(),
   `ModifiedBy` varchar(50) DEFAULT NULL
@@ -242,7 +252,8 @@ INSERT INTO `genre` (`GenreID`, `GenreName`, `CategoryID`, `CreatedBy`, `Created
 (1, 'Trinh Thám 2', 1, 'admin', '2024-10-30 06:06:17', '2024-10-30 06:06:45', 'admin'),
 (2, 'khoa học viễn tưởng', 2, 'admin', '2024-10-30 06:06:17', '2024-10-30 06:06:45', 'admin'),
 (3, 'truyện hài hước\r\n', 3, 'admin', '2024-10-30 06:06:17', '2024-10-30 06:06:45', 'admin'),
-(4, 'Tội phạm', 4, 'admin', '2024-10-30 06:06:17', '2024-12-19 02:31:32', NULL);
+(4, 'Tội phạm', 4, 'admin', '2024-10-30 06:06:17', '2024-12-19 02:31:32', NULL),
+(5, 'tét', 1, NULL, '2025-01-04 03:00:32', '2025-01-04 03:00:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -725,7 +736,8 @@ INSERT INTO `shoppingcart` (`CartID`, `UserID`) VALUES
 (212, NULL),
 (213, NULL),
 (214, NULL),
-(215, NULL);
+(215, NULL),
+(216, NULL);
 
 -- --------------------------------------------------------
 
@@ -992,19 +1004,19 @@ ALTER TABLE `bookset`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `coupon`
 --
 ALTER TABLE `coupon`
-  MODIFY `CouponID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `CouponID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `GenreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `GenreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -1052,7 +1064,7 @@ ALTER TABLE `shippingaddress`
 -- AUTO_INCREMENT cho bảng `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+  MODIFY `CartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
 
 --
 -- AUTO_INCREMENT cho bảng `shoppingcartdetail`
